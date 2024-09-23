@@ -1,5 +1,5 @@
+import { taskReduser } from './../modal/task-reduser';
 import { combineReducers, legacy_createStore as createStore } from 'redux'
-import { taskReduser } from '../modal/task-reduser'
 import { todolistReduser } from '../modal/todolists-reducer'
 
 // объединяя reducer-ы с помощью combineReducers,

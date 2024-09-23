@@ -13,6 +13,7 @@ import { addTaskAC, changeTaskStatusAC, removeTaskAC, updateTaskTitleAC } from '
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './store';
 
+
 export type TaskType = {
 	id: string
 	title: string
@@ -32,8 +33,9 @@ export type TodolistType = {
 export type TasksStateType = {
 	[key: string]: TaskType[]
 }
-
+ 
 function AppWichRedux() {
+	
 
     // хук useSelector достает данные их стейта (принемает колбек у которого на входе текущий стейт, а на выходе стейт выбранный) 
     // если мы хотим домтать таски или тудулисты из стейта, то пользуемся именно этим хуком ()
@@ -47,10 +49,9 @@ function AppWichRedux() {
     // в руторый rootReducer
     const dispatch = useDispatch()
 
-
 	
 	const removeTask = (taskId: string, todolistId: string) => {
-		dispatch(removeTaskAC({todolistId,taskId}))
+		dispatch(removeTaskAC({ todolistId, taskId }));
 	}
 
 	const addTask = (title: string, todolistId: string) => {

@@ -15,7 +15,7 @@ export const todolistReduser = (state:TodolistType[] = initialState, action:Acti
         }  
         case 'CHANGE-TODOLIST-TITLE': {
             // setTodolists(todolists.map(el=>el.id===todolistId ? {...el,title:updetedTitle} : el))
-            return state.map(el=>el.id === action.payload.id ? {...el,title:action.payload.title} :el)
+            return state.map(el=>el.id === action.payload.id ? {...el, title:action.payload.title} :el)
         }
         case 'CHANGE-TODOLIST-FILTER': {
             // const newTodolists = todolists.map(tl => {
@@ -37,7 +37,7 @@ export const removeTodolistAC = (id:string) => {
     } as const
 }
 
-export const addTodolistAC = (title:string) => {
+export const addTodolistAC = (title:string) =>{
     return {
         type: 'ADD-TODOLIST' ,
         payload: {
@@ -47,7 +47,7 @@ export const addTodolistAC = (title:string) => {
     } as const
 }
 
-export const chengeTodolistTitleAC = (payload:{id: string,title: string}) => {
+export const chengeTodolistTitleAC = (payload:{id: string,title: string}) =>{
     return {
         type: 'CHANGE-TODOLIST-TITLE',
         payload
